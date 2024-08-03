@@ -52,6 +52,7 @@ body {
 .card {
   color: var(--clr-neutral-100);
   background: rgba(255, 255, 255, 0.1); /* Slightly transparent white background */
+  background-size: contain;
   backdrop-filter: blur(10px); /* Blur effect */
   padding: 1rem;
   width: calc(50% - 2rem); /* Ensures each card takes up about half of the container width minus the margins */
@@ -74,19 +75,21 @@ body {
 .card-content {
   padding: 1.5rem;
   background: linear-gradient(
-    hsla(0, 93%, 5%, 0),
-    hsla(0, 1%, 14%, 0.3) 20%,
+    hsla(0, 100%, 0%, 0),
+    hsla(0, 0%, 4%, 0.3) 20%,
     hsl(0, 0%, 0%)
   );
 }
 
 .card-title {
   font-size: 1.5em; /* Adjust font size as needed */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-bottom: 0.5em; /* Adds some space below the title */
   white-space: nowrap; /* Prevents the title from wrapping to the next line */
   overflow: hidden; /* Hides any overflow text */
   text-overflow: ellipsis; /* Adds ellipsis (...) for overflow text */
   position: relative; /* Ensure ::after pseudo-element is positioned correctly */
+  backdrop-filter: blur(100px);
 }
 
 .card-title::after {
@@ -111,11 +114,13 @@ body {
   .card-content {
     transform: translateY(65%);
     transition: transform 500ms ease;
+    
   }
 
   .card-content > *:not(.card-title) {
     opacity: 0;
-    transition: opacity 500ms linear;
+    transition: opacity 1000ms linear;
+    backdrop-filter: blur(60px);
   }
 
   .card:hover .card-content > *:not(.card-title),

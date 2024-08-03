@@ -1,4 +1,5 @@
 const mongoose=require('mongoose');
+
 const eventSchema=mongoose.Schema({
     username:String,
     email:String,
