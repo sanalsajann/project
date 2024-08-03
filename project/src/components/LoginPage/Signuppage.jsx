@@ -1,52 +1,108 @@
 import React, { useState } from 'react';
 import './Signuppage.css';
-import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { Box, TextField, Button, Typography, InputAdornment, Link as MuiLink } from '@mui/material';
+import { Email as EmailIcon, Lock as LockIcon, Person as PersonIcon } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
-const Signup = () => {
+const Signuppage = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    try {
-      const response = await axios.post("http://localhost:4002/events", { username, email, password });
-      console.log(response);
-      alert("Signup Successful")
-      navigate('/login')
-    } catch (error) {
-      console.error(error);
-      // Display a user-friendly error message
-      alert("Error signing up. Please try again later.");
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Perform sign-up logic here
+    console.log('Username:', username);
+    console.log('Email:', email);
+    console.log('Password:', password);
   };
 
   return (
-    <div className='wrapper'>
-      <form onSubmit={handleSubmit}> 
-        <h1>Signup</h1>
-        <div className="input-box">
-          <input type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} required />
-          <FaUser className='icon' size={20} />
-        </div>
-        <div className="input-box">
-          <input type="email" placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <FaEnvelope className='icon' size={20} />
-        </div>
-        <div className="input-box">
-          <input type="password" placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} required />
-          <FaLock className='icon' size={20} />
-        </div>
-        <button type="submit">Signup</button>
-        <div className="login-link">
-          <p>Already have an account? <Link to="/login">Login</Link></p>
-        </div>
-      </form>
+    <div className="signup-container">
+      <Box
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 2, width: '100%' },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+        noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        <Typography variant="h4" component="h2" className="signup-header">
+          Sign Up
+        </Typography>
+        <TextField
+          id="username"
+          label="Username"
+          variant="filled"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+          sx={{ mb: 2 }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <PersonIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+        <TextField
+          id="email"
+          label="Email"
+          variant="filled"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          sx={{ mb: 2 }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <EmailIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+        <TextField
+          id="password"
+          label="Password"
+          type="password"
+          variant="filled"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          sx={{ mb: 2 }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <LockIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+        <Button
+          type="submit"
+          variant="contained"
+          sx={{
+            backgroundColor: '#007bff',
+            '&:hover': { backgroundColor: '#0056b3' },
+            borderRadius: '8px',
+            padding: '12px',
+            fontSize: '16px',
+            width: '100%',
+          }}
+        >
+          Sign Up
+        </Button>
+        <Typography variant="body2" className="login-link">
+          Already have an account? <Link to="/Loginpage" className="login-link-text">Login</Link>
+        </Typography>
+      </Box>
     </div>
-  )
-}
+  );
+};
 
-export default Signup;
+export default Signuppage;

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import './HomeBar.css';
 import { Link } from 'react-router-dom';
-import HomeAppBar from './HomeAppBar';
+// import HomeAppBar from './HomeAppBar';
 import HomeAppBarAlt from './HomeAppBarAlt';
 import Footer from './Footer';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { TypeAnimation } from 'react-type-animation';
+import Carousel1 from './Carousel1';
+
 
 export default function HomeBar() {
   const [liked, setLiked] = useState(Array(6).fill(false));
@@ -24,19 +26,19 @@ export default function HomeBar() {
       id: 1,
       title: "Tech Innovation Summit 2024",
       description: "Join the brightest minds in technology and innovation at the Tech Innovation Summit 2024. Explore the latest trends in AI, blockchain, and cybersecurity, and network with industry leaders. This event will feature keynote speakers, panel discussions, and hands-on workshops designed to inspire and educate attendees.",
-      url: 'https://media.licdn.com/dms/image/D4E12AQEL9_m5ZrnB6w/article-cover_image-shrink_720_1280/0/1667152480221?e=2147483647&v=beta&t=LZ3OE4tKLKXfYfEJhFzosR7gifkHy6gbG8ml0WoxaKM'
+      url: 'https://www.eschoolnews.com/files/2024/12/k-12-tech-innovation-news.jpeg'
     },
     {
       id: 2,
       title: "Global Music Fest 2024",
       description: "Experience the magic of live music at the Global Music Fest 2024. Featuring artists from around the world, this festival promises a diverse lineup of genres, unforgettable performances, and immersive experiences for all music lovers.",
-      url: 'https://static.toiimg.com/photo/msid-95737367,width-96,height-65.cms'
+      url: 'https://thumbs.dreamstime.com/b/crowd-concert-summer-music-festival-crowd-concert-summer-music-festival-89546129.jpg'
     },
     {
       id: 3,
       title: "Health and Wellness Expo 2024",
       description: "Discover the latest in health and wellness at the Health and Wellness Expo 2024. This event brings together experts in nutrition, fitness, mental health, and holistic wellness to provide attendees with valuable insights and practical tips for a healthier lifestyle.",
-      url: 'https://cdn-az.allevents.in/events5/banners/176c39b375490079ac35687f6c076a05c36f0a928a008fd1aaa4b423948ee39d-rimg-w1200-h600-dcfeffff-gmir.jpg?v=1720334382'
+      url: 'https://img.freepik.com/premium-photo/stethoscope-glass-table-dark-background-concept-medicine-medical-treatment_51530-1536.jpg'
     },
     {
       id: 4,
@@ -60,11 +62,11 @@ export default function HomeBar() {
 
   return (
     <>
+      <Box className='Topbar'sx={{paddingTop:'2%',zIndex:1000}}><HomeAppBarAlt/></Box>
       <div className="mainbox">
         {/* <HomeAppBar /> */}
-        <HomeAppBarAlt/>
-        <div className="content">
-          <div className='typeanimation'>
+        <Box sx={{width:'100%', paddingTop:'4%',zIndex:10}} ><Carousel1/></Box>
+        <Box className='textanimation'sx={{textAlign:'center',height:'15rem',backdropFilter:'(10)px',padding:'50px'}}>
             <TypeAnimation
               preRenderFirstString={true}
               sequence={[
@@ -79,12 +81,14 @@ export default function HomeBar() {
                 500,
               ]}
               speed={50}
-              style={{ fontSize: '3em', fontWeight: 'bold', fontFamily: 'fantasy' }}
+              style={{ fontSize: '4em', fontWeight: 'bold', fontFamily: 'fantasy',color:'whitesmoke' }}
               repeat={Infinity}
               className="type-animation"
             />
-          </div>
-          <Box className="cards-container">
+      </Box>  
+
+        <div className="content">
+          <div className="cards-container">
               {cardsData.map((card, index) => (
                 <div key={card.id} className="card" style={{ backgroundImage: `url(${card.url})` }}>
                   <div className="card-content">
@@ -116,10 +120,9 @@ export default function HomeBar() {
                   </div>
                 </div>
               ))}
-            </Box>
-
-          <Footer className="footer" />
+            </div>
         </div>
+        <Box sx={{ background: 'var(--clr-neutral-900)', color: 'var(--clr-neutral-100)', padding: '10px', textAlign: 'center' ,width:'100%',marginBottom:'1%'}}><Footer className="footer" /></Box>
       </div>
     </>
   );

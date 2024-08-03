@@ -6,13 +6,14 @@ import './Footer.css';
 export default function Footer() {
   return (
     <Box sx={{
-      marginTop: 'auto',
-      padding: '16px',
+      // marginTop: 'auto',
+      marginBottom:0,
+      padding: '12px',
       backgroundColor: '#f1f1f1',
       textAlign: 'center',
     }}>
       <Typography variant="body2" color="text.secondary">
-        © 2024 EventHub. All rights reserved.
+        © 2024 EventXmedia. All rights reserved.
       </Typography>
     </Box>
   );
