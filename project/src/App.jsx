@@ -9,6 +9,7 @@ import axios from 'axios';
 import EventDetails from './components/EventDetails/EventDetails';
 import Signuppage from './components/LoginPage/Signuppage';
 import Loginpage from './components/LoginPage/Loginpage';
+import AboutUs from './components/HomePage/Aboutus';
 
 
 
@@ -28,7 +29,9 @@ function App() {
         <Route path="/Loginpage" element={<Loginpage />} />
         <Route path="/Signuppage" element={<Signuppage />} />
         <Route path="/" element={<HomeBar />} />     
-        <Route path="/eventdetails" element={<EventDetails />} /> 
+        {/* <Route path="/eventdetails" element={<EventDetails />} />  */}
+        <Route path="/eventpages/:eventId" element={<EventDetails />} />
+        <Route path='/Aboutus' element={<AboutUs/>}/>
       </Routes>
     </>
   );

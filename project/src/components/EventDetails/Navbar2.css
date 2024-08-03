@@ -1,0 +1,16 @@
+@keyframes colorPulse {
+    0% {
+      color: white;
+    }
+    50% {
+      color: red;
+    }
+    100% {
+      color: white;
+    }
+  }
+  
+  .animated-text {
+    animation: colorPulse 2s infinite; /* Adjust duration and timing as needed */
+  }
+  

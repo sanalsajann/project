@@ -65,7 +65,8 @@
   
   .organizer-info {
     display: flex;
-    align-items: center;
+    align-items: center; /* Aligns items vertically center */
+    gap: 10px; /* Adjust the gap between the name and company as needed */
   }
   
   .organizer-avatar {
@@ -85,6 +86,12 @@
   .organizer-company {
     color: gray;
   }
+
+  .organizer-name, .organizer-company {
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Removes default padding */
+  }
+  
   
   .register-button-container {
     text-align: right;

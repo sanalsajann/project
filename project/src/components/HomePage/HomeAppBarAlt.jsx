@@ -53,7 +53,7 @@ const NavbarHook = () => {
         </li>
         <li>
           <NavLink
-            to="/about-us"
+            to="/Aboutus"
             className={linkClassName}
             onClick={closeMobileMenu}
           >
@@ -70,13 +70,23 @@ const NavbarHook = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink
+          {/* <NavLink
             to="/location"
             className={linkClassName}
             onClick={closeMobileMenu}
           >
             Location
-          </NavLink>
+          </NavLink> */}
+          <a
+            href="https://www.google.com/maps/place/Thiruvananthapuram,+Kerala/@8.5000379,76.7593516,11z/data=!3m1!4b1!4m6!3m5!1s0x3b05bbb805bbcd47:0x15439fab5c5c81cb!8m2!3d8.5241391!4d76.9366376!16zL20vMGZrOTg?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={linkClassName}
+            onClick={closeMobileMenu}
+          >
+            Location
+          </a>
+
         </li>
         <li>
           <NavLink
