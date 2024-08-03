@@ -1,5 +1,4 @@
 body {
-  background-image: url('https://i.redd.it/4w8jxyi56if41.jpg');
   background-size: cover; /* This makes the background cover the entire area */
   background-position: center; /* This centers the background image */
   background-repeat: no-repeat; /* This prevents the background from repeating */
@@ -8,14 +7,14 @@ body {
   padding: 0; /* Ensures there's no padding around the body */
 }
 
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent background to the root for better readability */
-  border-radius: 8px; /* Optional: Adds rounded corners to the root */
-}
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent background to the root for better readability 
+  border-radius: 8px;  Optional: Adds rounded corners to the root 
+} */
 
 /* .logo {
   height: 6em;
@@ -31,21 +30,6 @@ body {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 } */
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
 .card {
   padding: 2em;

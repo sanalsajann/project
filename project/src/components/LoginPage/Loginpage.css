@@ -1,155 +1,145 @@
-.wrapper {
-  width: 420px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(30px);
-  color: #fff;
-  border-radius: 10px;
-  padding: 30px 40px;
-}
-
-.wrapper h1 {
-  font-size: 36px;
-  text-align: center;
-}
-
-.wrapper .input-box {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  margin: 30px 0;
-}
-
-.input-box input {
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: #fff;
-  padding: 20px 45px 20px 20px;
-}
-
-.input-box input::placeholder {
-  color: #fff;
-  opacity: 1; /* added opacity to make placeholder text visible */
-}
-
-.input-box .icon {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
-}
-
-.wrapper .remember-forgot {
+/* General body styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-size: cover;
   display: flex;
-  justify-content: space-between;
-  font-size: 14.5px;
-  margin: -15px 0 15px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.remember-forgot label input {
-  accent-color: #fff;
-  margin-right: 4px;
+/* Style the login container with highly translucent effect */
+.login-container {
+  background: rgba(255, 255, 255, 0.05); /* Very translucent background */
+  backdrop-filter: blur(30px); /* Stronger blur effect for better glass effect */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Darker shadow for better visibility */
+  width: 360px;
+  max-width: 100%;
+  text-align: center;
+  position: relative; /* Ensure proper stacking context */
+  z-index: 1; /* Ensure it appears above other elements */
 }
 
-.remember-forgot a {
-  color: #fff;
-  text-decoration: none;
+/* Style the header */
+.login-header {
+  margin-bottom: 24px;
+  font-size: 24px; /* Adjusted font size for a more subtle look */
+  font-weight: 800; /* Bold weight for emphasis */
+  color: #2c3e50; /* Dark, professional color */
+  letter-spacing: 1px; /* Slightly spaced letters */
 }
 
-.remember-forgot a:hover {
+/* Style the Remember Me checkbox */
+.MuiFormControlLabel-label {
+  color: #333; /* Match the color of other text elements */
+}
+
+/* Style the Forgot Password link */
+.forgot-password {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.forgot-password-link {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.forgot-password-link:hover {
   text-decoration: underline;
 }
 
-.wrapper button {
+/* Style the sign-up link */
+.signup-link {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.signup-link-text {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.signup-link-text:hover {
+  text-decoration: underline;
+}
+
+/* Style the form */
+.login-form {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 45px;
-  background: #fff;
+}
+
+/* Style the form group */
+.form-group {
+  margin-bottom: 24px;
+}
+
+/* Style the labels */
+.form-group label {
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 500; /* Slightly lighter font weight for modern look */
+  color: #444; /* Darker color for better contrast */
+  font-size: 14px; /* Adjusted font size for better readability */
+}
+
+/* Style the input fields */
+.form-group input {
+  width: 100%;
+  padding: 14px; /* Increased padding for a more spacious look */
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Light grey border for a soft appearance */
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fff; /* Clean white background */
+  color: #333; /* Dark text color for readability */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Style for focus state of the input fields */
+.form-group input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Subtle blue shadow effect */
+}
+
+/* Style the login button */
+.login-button {
+  padding: 14px; /* Increased padding for a more prominent button */
+  background-color: #000; /* Black background color */
+  color: #fff; /* White text color */
   border: none;
-  outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
-  color: #333;
-  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.wrapper .register-link {
-  font-size: 14.5px;
-  text-align: center;
-  margin: 20px 0 15px;
+/* Change background color and scale button on hover */
+.login-button:hover {
+  background-color: #333; /* Slightly lighter black on hover */
+  transform: scale(1.02);
 }
 
-.register-link p a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
+/* Change background color and scale button on active */
+.login-button:active {
+  background-color: #111; /* Darker black on active */
+  transform: scale(0.98);
 }
 
-.register-link p a:hover {
-  text-decoration: underline;
+/* Style the header */
+.login-form h2 {
+  margin-bottom: 24px;
+  font-size: 28px;
+  color: #333; /* Dark color for the header */
+  font-weight: 700; /* Bold font weight for emphasis */
 }
 
-body {
-  background-image: url('https://images.unsplash.com/photo-1634176866089-b633f4aec882?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGxhbmV0JTIwZWFydGh8ZW58MHx8MHx8fDA%3D');
-  background-size: cover; /* This makes the background cover the entire area */
-  background-position: center; /* This centers the background image */
-  background-repeat: no-repeat; /* This prevents the background from repeating */
-  background-attachment: fixed; /* This makes the background image stay fixed during scrolling */
-  margin: 0; /* Ensures there's no margin around the body */
-  padding: 0; /* Ensures there's no padding around the body */
-}
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.8); /* Optional: Adds a semi-transparent background to the root for better readability */
-  border-radius: 8px; /* Optional: Adds rounded corners to the root */
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
