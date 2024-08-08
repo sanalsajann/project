@@ -1,0 +1,31 @@
+.registered-events-container {
+    padding: 20px;
+  }
+  
+  .event-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+  }
+  
+  .event-card h3 {
+    margin-top: 0;
+  }
+  
+  .event-card a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .event-card a:hover {
+    text-decoration: underline;
+  }
+  

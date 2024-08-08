@@ -1,0 +1,109 @@
+/* ProfileView.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Keyframes for typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #1a2a3a; }
+}
+
+/* Profile View Container */
+.profile-view-container {
+  display: flex;
+  height: 80vh;
+  width: 35vw;
+  background-size: cover;
+}
+
+/* Profile View Styling */
+.profile-view {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  background: rgba(246, 246, 249, 0.7); /* Light grey with higher translucency */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+/* Animation for the heading */
+.typing-animation {
+  font-size: 2.5em; 
+  color: #1a2a3a;
+  overflow: hidden; 
+  white-space: nowrap; 
+  border-right: .15em solid #1a2a3a; 
+  animation: typing 4s steps(40, end) 1s infinite, blink-caret .75s step-end infinite;
+  font-family: 'Roboto', sans-serif; 
+ 
+  animation: typing 4s steps(40, end) 1s infinite, blink-caret .75s step-end infinite;
+  animation-delay: 0s, 10s;
+}
+
+.profile-details {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-detail .icon {
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #3498db; /* Complementary color for icons */
+}
+
+.profile-label {
+  width: 150px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #1a2a3a; /* Darker color for labels */
+}
+
+.profile-detail input, .profile-detail select {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff; /* White background for inputs */
+  color: #333; /* Dark text color for readability */
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.profile-detail input:focus, .profile-detail select:focus {
+  border-color: #3498db; /* Highlight color */
+}
+
+.profile-detail input[readonly], .profile-detail select[disabled] {
+  background-color: #f0f0f0;
+}
+
+.edit-btn {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff; /* White text color */
+  background-color: #1a2a3a; /* Darker color for button background */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #16a085; /* Darker teal on hover */
+}
